@@ -2,8 +2,8 @@ from flask import (
     Flask,
     render_template,
     url_for,
-    redirect,
-    flash,
+    # redirect,
+    # flash,
     request,
     # abort,
 )
@@ -55,47 +55,23 @@ def register_submit():
     email = request.form.get("email")
     password = request.form.get("password")
     gender = request.form.get("gender")
-    print(f"Name: {name}, Email: {email}, Password: {password}")
-    print("🍌🍌🍌")
-    print(f"{request.form}")
-    print("🍌🍌🍌")
+    button_pressed = None
 
-    flash("Registration successful! Thank you for signing up.")
-    # return redirect(url_for("register"))
-
-    gender = request.form.get("gender")
-
-    if gender == "Male":
-        gender_message = "Hello, you are a boy. Thanks!"
-    elif gender == "Female":
-        gender_message = "You are a super Queen!"
-    elif gender == "Others":
-        gender_message = "You are God-gifted!"
-    elif gender == "Hidden":
-        gender_message = "You have a hidden personality!"
-    else:
-        gender_message = "This has not checkied yet"
-
-    # Below is Button pressed data
-
+    # Detect which button was pressed
     if "b1" in request.form:
-        button_name_data = f"You have pressed New Account Creation"
+        button_pressed = "b1"
     elif "b2" in request.form:
-        button_name_data = f"You Want to update your acccount"
+        button_pressed = "b2"
     elif "b3" in request.form:
-        button_name_data = f"YOu want to delete your accoutn"
-    else:
-        button_name_data = f"You selected something else"
+        button_pressed = "b3"
 
-    # here i used logic inside python not in html
     return render_template(
         "register_submit.html",
         name_data=name,
         email_data=email,
         password_data=password,
         gender_data=gender,
-        gender_message_data=gender_message,
-        button_name_data=button_name_data,
+        button_pressed=button_pressed,
     )
 
 
