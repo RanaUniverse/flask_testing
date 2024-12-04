@@ -1,0 +1,1 @@
+i wan to make two button  on same form

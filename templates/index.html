@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Website in Flask</title>
+</head>
+
+<body>
+    <h1>This is my testing website </h1>
+    <!-- <img src="../static/images/icons_logo/linux_logo.png" alt="my linux logo 1" width="200"> -->
+    <br>
+    <img src="{{ url_for('static', filename='images/icons_logo/linux_logo.png') }}" alt="My Linux Logo 2" width="200">
+    <br>
+    This image is taking from url_for inside the html file.
+    <br>
+    <h2><a href="/register">Register Your New Account Form To Use Our Website</a></h2>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Making New Account</title>
+    <!-- Link to external CSS -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+</head>
+
+<body>
+    <h1>You Are on Your Way to Make a New Account!</h1>
+    <form action="/register_submit" method="post">
+
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" placeholder="Enter a secure password" required><br><br>
+
+        <p>What is Your Gender</p>
+
+        <input type="radio" name="gender" id="male" value="Male">
+        <label for="male">I am Male</label>
+        <br>
+        <input type="radio" name="gender" id="female" value="Female">
+        <label for="female">I am a girl</label>
+        <br>
+        <input type="radio" name="gender" id="others" value="Others">
+        <label for="others">I am both</label>
+        <br>
+        <input type="radio" name="gender" id="hidden" value="Hidden">
+        <label for="hidden">I dont want to say</label>
+        <br>
+        
+        <button type="submit" name="b1">Create Account</button>
+        <button type="submit" name="b2">Update Accoutn</button>
+        <button type="submit" name="b3">Delete Account</button>
+        <hr>
+    </form>
+</body>
+
+</html>
